@@ -22,6 +22,8 @@ def emotionDetector():
     # error or exception check
     if isinstance(output, str):
         return output
+    if output['dominant_emotion'] is None:
+        return "Invalid text! Please try again!"
 
     result="For the given statement, the system response is " \
         f"'anger': {output['anger']}, 'disgust': {output['disgust']}, " \
